@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import ImageDataGenerator
 from keras import models, layers
 from keras.models import load_model
-
 import json
 
 dataset_path = 'fruitDataset' #getting the path to the dataset
@@ -48,8 +47,6 @@ history = model.fit(
     verbose=1
 )
 print(type(history))
-
-
 
 # Save the model architecture to JSON
 model_json = model.to_json()
