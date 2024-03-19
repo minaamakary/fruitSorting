@@ -7,7 +7,7 @@ from keras.models import load_model
 
 import json
 
-dataset_path = 'fruitPictures' #getting the path to the dataset
+dataset_path = 'fruitDataset' #getting the path to the dataset
 
 train_datagen = ImageDataGenerator( #image processing
     rescale=1./255,
@@ -32,7 +32,7 @@ model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(224,224,3)))
 model.add(layers.Conv2D(32, (3, 3), activation='relu')) #adding layer 2
 model.add(layers.Conv2D(32, (3, 3), activation='relu')) #adding layer 3 
 model.add(layers.Flatten())
-model.add(layers.Dense(53, activation='softmax'))
+model.add(layers.Dense(2, activation='softmax'))
 
 model.summary()
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
